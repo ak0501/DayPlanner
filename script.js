@@ -13,7 +13,7 @@ todayDate();
 // variables
 
 var hrNote = [];
-var storeItems = ["#9AM", "#10AM", "#11AM", "#12PM", "#1PM", "#2PM", "#3PM", "#4PM", "#4AM"];
+var storeItems = ["#9am", "#10am", "#11am", "#12pm", "#1pm", "#2pm", "#3pm", "#4pm", "#5pm"];
 
 // dynamically change the #currentday textcontent to
 
@@ -34,9 +34,9 @@ var storeItems = ["#9AM", "#10AM", "#11AM", "#12PM", "#1PM", "#2PM", "#3PM", "#4
 // when text is entered in the text area and clicked saved ; the data is saved and stored 
 // need a function retrieve the data from the local storage to the page
 function retrieve() {
-    var saveData = JSON.parse(localStorage.getItem("hrNote", [])) || [];
+    var saveData = JSON.parse(localStorage.getItem("schedule", [])) || [];
     for (let i = 0; i < storeItems.length; i++) {
-        $(storeItems[i].text(saveData[i]));
+        $(storeItems[i]).text(saveData[i]);
 
     }
 
@@ -45,50 +45,50 @@ retrieve();
 
 // need a function to save the texts to the storage
 function save() {
-    window.localStorage.setItem("hrNote", JSON.stringify(hrNote));
+    window.localStorage.setItem("schedule", JSON.stringify(hrNote));
 }
 
-$("#saveBtn9").on("click", function () {
+$("#btn9").on("click", function () {
     hrNote[0] = $("#9am").val();
     console.log(hrNote)
     save();
 });
-$("#saveBtn10").on("click", function () {
+$("#btn10").on("click", function () {
     hrNote[1] = $("#10am").val();
     console.log(hrNote)
     save();
 });
-$("#saveBtn11").on("click", function () {
+$("#btn11").on("click", function () {
     hrNote[2] = $("#11am").val();
     console.log(hrNote)
     save();
 });
-$("#saveBtn12").on("click", function () {
+$("#btn12").on("click", function () {
     hrNote[3] = $("#12am").val();
     console.log(hrNote)
     save();
 });
-$("#saveBtn1").on("click", function () {
+$("#btn1").on("click", function () {
     hrNote[4] = $("#1pm").val();
     console.log(hrNote)
     save();
 });
-$("#saveBtn2").on("click", function () {
+$("#btn2").on("click", function () {
     hrNote[1] = $("#2pm").val();
     console.log(hrNote)
     save();
 });
-$("#saveBtn3").on("click", function () {
+$("#btn3").on("click", function () {
     hrNote[1] = $("#3pm").val();
     console.log(hrNote)
     save();
 });
-$("#saveBtn4").on("click", function () {
+$("#btn4").on("click", function () {
     hrNote[1] = $("#4pm").val();
     console.log(hrNote)
     save();
 });
-$("#saveBtn5").on("click", function () {
+$("#btn5").on("click", function () {
     hrNote[1] = $("#5pm").val();
     console.log(hrNote)
     save();
