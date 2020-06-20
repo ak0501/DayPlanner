@@ -1,14 +1,12 @@
 // current day is displayed at the top of the calander object stored in var d
-function setpage() {
-    var dt = new Date();
-    $("#currentDay").text(dt.toDateString());
+
+
+function todayDate() {
+    var td = new Date();
+    $("#currentDay").html(td.toDateString());
+    console.log(td.toDateString());
 };
-setPage();
-console.log(dt.toDateString);
-// on page load the background color od the different hours change based on current time
-
-
-// when text is entered in the text area and clicked saved ; the data is saved and stored 
+todayDate();
 
 
 
@@ -33,10 +31,10 @@ var storeItems = ["#9AM", "#10AM", "#11AM", "#12PM", "#1PM", "#2PM", "#3PM", "#4
 // when the page refreshes the events are saved
 // 
 
-
+// when text is entered in the text area and clicked saved ; the data is saved and stored 
 // need a function retrieve the data from the local storage to the page
 function retrieve() {
-    var saveData = JSON.parse(localStorage.getItem("schedule", [])) || [];
+    var saveData = JSON.parse(localStorage.getItem("hrNote", [])) || [];
     for (let i = 0; i < storeItems.length; i++) {
         $(storeItems[i].text(saveData[i]));
 
@@ -106,7 +104,7 @@ for (let x = 0; x < hrNote.length; x++) {
         $(storeItems[x]).attr("class", "present")
     }
     if (hour < timeSlots[x]) {
-        $(storeItems[x]).attr("class", "future")
+        $(storeItems[x]).attr("class", "past")
     }
     else {
         $(storeItems[x]).attr("class", "future")

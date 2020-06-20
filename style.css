@@ -6,11 +6,14 @@ body {
 
 textarea{
   background: transparent;
-  border: none;
+  border: bottom solid;
   resize: none;
   color: #000000;
   border-left: 1px solid black;
-  padding: 0px;
+  padding: 0;
+  display:-webkit-flex;
+  
+  
 
 }
 
@@ -33,7 +36,7 @@ textarea{
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
+  height: auto;
   border-top: 1px solid white;;
 }
 
@@ -41,6 +44,8 @@ textarea{
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  align-items: center;
+  width: 50px;
 }
 
 .past {
@@ -71,3 +76,4 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
